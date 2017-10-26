@@ -1,6 +1,9 @@
 # pokedex-mean
 Pokédex fait avec les technos MEAN (Mongo, Express, Angular 2 and Node.js)
 
+## Liens utiles
+- https://www.djamware.com/post/58cf4e1c80aca72df8d1cf7e/tutorial-building-crud-app-from-scratch-using-mean-stack-angular-2
+
 # Pokemon
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.

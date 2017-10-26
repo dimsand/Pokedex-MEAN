@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="gt">
+<head>
+  <meta charset="utf-8">
+  <title>Pokemon</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="https://bootswatch.com/4-alpha/darkly/bootstrap.css" media="screen">
+  <link rel="stylesheet" href="https://bootswatch.com/4-alpha/assets/css/custom.min.css" media="screen">
+  <style>
+    body{padding-top: 0; background-color: #292929; } 
+    .navbar { padding: 0; }
+    .container{ margin-top: 15px; }
+    .logo{
+        height: 38px;
+        margin: 10px;
+    }
+    
+    .navbar-brand{
+        padding: 0;
+    }
+    
+    .search_navbar{
+        margin-right: 15px;
+    }
+    
+    .menu_navbar{
+        align-items: center;
+        height: 58px;
+    }
+    
+    .menu_navbar li{
+        align-items: center;
+        display: flex;
+        height: 100%;
+        padding-left: 10px;
+        padding-right: 12px;
+    }
+    
+    .menu_navbar li.active{
+        background-color: #2f4e6d;
+    }
+  </style>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" routerLink="home"><img class="logo" src="assets/logo.png"></a>
+        
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto menu_navbar">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="/">Accueil</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="/pokedex">Mon pokédex <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="/liste">Liste des pokémons</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" href="">About</a>
+            </li>
+            </ul>
+            <form class="form-inline search_navbar">
+            <input class="form-control mr-sm-2" type="text" placeholder="Rercherche un pokémon">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Go</button>
+            </form>
+        </div>
+    </nav>
+
+    <p class="page_error">
+        <img class="img_error" src="/assets/404.png">
+    </p>
+        
+  <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/78d64697/cloudflare-static/email-decode.min.js"></script>
+  <script src="https://bootswatch.com/4-alpha/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="https://bootswatch.com/4-alpha/bower_components/tether/dist/js/tether.min.js"></script>
+  <script src="https://bootswatch.com/4-alpha/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="https://bootswatch.com/4-alpha/assets/js/custom.js"></script>  
+</body>
+</html>

@@ -8,8 +8,10 @@
   <p class="lead"></p>
 </div>
 
-<div *ngIf="erreurRecupData" class="card">
+<div *ngIf="erreurRecupData" class="card text-center">
     <p>Il y a eu une erreur lors de la récupération des données.</p>
+    <p *ngFor="let err of errApi">{{ err }}</p>
+    <p>{{ errApiPlus.detail }}</p>
 </div>
 
 <div *ngIf="(pokemons | json) != '{}'" class="list_pokemons">

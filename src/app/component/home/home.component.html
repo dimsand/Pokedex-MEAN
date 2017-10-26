@@ -1,9 +1,4 @@
 <h1>{{ title }}</h1> 
-<div class="alert alert-dismissible alert-info">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
-</div>
-
 <div class="jumbotron">
   <h1 class="display-3">Rechercher un pokémon</h1>
   <div class="form-group">
@@ -23,6 +18,12 @@
   </p>
   <p class="lead">Recherche en cours</p>
 </div>
+
+<div class="alert alert-dismissible alert-danger" *ngIf="error">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{ error.detail }}
+</div>
+
 <div *ngIf="(result | json) != '{}'">
   <div class="card">
     <h3 class="card-header">{{ result.name }}</h3>

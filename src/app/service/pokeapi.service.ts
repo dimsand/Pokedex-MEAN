@@ -5,12 +5,51 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PokeapiService {
 
+  private API_URL = 'https://pokeapi.co/api/v2/pokemon/';
+
   constructor(private http: Http) { }
 
-  getPokemonByIdName(pokemon) { 
-    return new Promise((resolve, reject) => {
-      let apiURL = 'https://pokeapi.co/api/v2/pokemon/' + pokemon;
+  //////////////////////////////////////////////////////////
+  // From DATABASE
 
+  getPokemonFromDb(pokemon) {
+    return new Promise((resolve, reject) => {
+      var BDD_URL = '/pokemon/name/'+pokemon
+      if(Number(pokemon)){
+        BDD_URL = '/pokemon/id/'+pokemon;
+      }
+      console.log("BDD URL : " + BDD_URL);
+      this.http.get(BDD_URL)
+        .map(res => res.json())
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  storePokemonInDb(pokemon) {
+    return new Promise((resolve, reject) => {
+      var BDD_URL = "/pokemon"
+      console.log("BDD URL : " + BDD_URL);
+      this.http.post(BDD_URL, pokemon)
+        .map(res => res.json())
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  //////////////////////////////////////////////////////////
+  // From API pokeapi.co
+
+  getPokemonFromApi(pokemon) {
+    let apiURL = this.API_URL + pokemon;
+    return new Promise((resolve, reject) => {
+      console.log("API URL : " + apiURL);
       this.http.get(apiURL)
         .toPromise()
         .then(
