@@ -1,0 +1,22 @@
+.list_pokemons{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card_pokemon{
+    width: 33%
+}
+
+.badge_type{
+    margin-left: 5px;
+}
+
+.isFirst{
+    width: 0;
+    display: none;
+}
+
+.loader_liste_pokemons{
+    height:40px;
+    transition: .5s linear;
+}

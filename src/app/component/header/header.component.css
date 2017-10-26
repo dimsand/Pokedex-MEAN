@@ -1,0 +1,29 @@
+.logo{
+    height: 38px;
+    margin: 10px;
+}
+
+.navbar-brand{
+    padding: 0;
+}
+
+.search_navbar{
+    margin-right: 15px;
+}
+
+.menu_navbar{
+    align-items: center;
+    height: 58px;
+}
+
+.menu_navbar li{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 12px;
+}
+
+.menu_navbar li.active{
+    background-color: #2f4e6d;
+}

@@ -1,0 +1,54 @@
+<h1>{{ title }}</h1> 
+<div class="alert alert-dismissible alert-info">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+</div>
+
+<div class="jumbotron">
+  <h1 class="display-3">Rechercher un pokémon</h1>
+  <div class="form-group">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">🔎</div>
+          <input type="text" class="form-control" id="query" placeholder="pikachu" #query value="pikachu" (keyup.enter)="searchPokemon(query.value)" autofocus>
+        </div>
+      </div>
+    </div>
+  <p class="text-center"><button class="btn btn-primary btn-lg" (click)="searchPokemon(query.value)">Rechercher</button></p>
+</div>
+
+<div class="text-center" *ngIf="loadingResult">
+  <p>
+      <img src="assets/loader.gif" class="loader_search">
+  </p>
+  <p class="lead">Recherche en cours</p>
+</div>
+<div *ngIf="(result | json) != '{}'">
+  <div class="card">
+    <h3 class="card-header">{{ result.name }}</h3>
+    <div class="card-block">
+        <span class="badge badge-default" *ngFor="let type of result.types">
+          <a target="_blank"
+            href="{{type.type.url}}">{{ type.type.name }}
+          </a>
+        </span>
+    </div>
+
+    <div class="card-block">
+      <div class="row">
+        <div class="col-12 col-md-4">
+            <img *ngIf="result.sprites.front_default" [src]="result.sprites.front_default" alt="{{ result.name }}">
+        </div>
+        <div class="col-12 col-sm-6 col-md-8">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Ecouter son cri</a>
+            <a href="#" class="card-link">Où le trouver ?</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer text-muted text-xs-center">
+        ✘ Pas encore dans le pokédex
+    </div>
+  </div>
+</div>

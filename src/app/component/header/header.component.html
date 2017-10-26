@@ -1,0 +1,27 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+  <a class="navbar-brand" routerLink="home"><img class="logo" src="assets/logo.png"></a>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto menu_navbar">
+      <li class="nav-item" routerLinkActive="active">
+       <a class="nav-link" routerLink="home">Accueil</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="pokedex">Mon pokédex <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="liste">Liste des pokémons</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="**">About</a>
+      </li>
+    </ul>
+    <form class="form-inline search_navbar">
+      <input class="form-control mr-sm-2" type="text" placeholder="Rercherche un pokémon">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Go</button>
+    </form>
+  </div>
+</nav>
