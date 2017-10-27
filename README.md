@@ -9,6 +9,7 @@ Pokédex réalisé lors d'un TP avec les technos MEAN (Mongo, Express, Angular 2
 2. Install the dependencies with `npm install`
 3. Launch Angular Server with `ng serve` (port 4200)
 4. Launch Express Node Js Server with `npm start` (port 3000)
+5. Go on http://localhost:4200 to see project
 
 ## Liens utiles
 - https://www.djamware.com/post/58cf4e1c80aca72df8d1cf7e/tutorial-building-crud-app-from-scratch-using-mean-stack-angular-2
