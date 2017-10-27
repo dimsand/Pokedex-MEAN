@@ -2,9 +2,7 @@
 Pokédex réalisé lors d'un TP avec les technos MEAN (Mongo, Express, Angular 2 and Node.js)
 
 
-<img src="./screenshot1.png" width="33%">
-<img src="./screenshot2.png" width="33%">
-<img src="./screenshot3.png" width="33%">
+<img src="./screenshot1.png" width="33%"><img src="./screenshot2.png" width="33%"><img src="./screenshot3.png" width="33%">
 
 ## Getting Started
 1. Clone the repository
