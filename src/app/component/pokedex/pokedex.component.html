@@ -1,3 +1,43 @@
-<p>
-  Liste des pokémons recherchés :
-</p>
+<h2>Mon pokédex <small *ngIf="pokemons[1]?.length > 0">({{ pokemons[1].length }})</small></h2>
+<div *ngIf="loadingPokemons">
+  <p class="text-center">
+      Chargement... {{percentLoadingPokemons}}%
+  </p>
+  <p>
+      <img src="assets/loader.gif" class="loader_liste_pokemons" [style.margin-left.%]="percentLoadingPokemons">
+  </p>
+  <p class="lead"></p>
+</div>
+  
+<div *ngIf="pokemons[1]?.length > 0" class="list_pokemons">
+
+  <div *ngFor="let pokemon of pokemons[1]; let isFirst = first" class="card card_pokemon" [class.isFirst]="isFirst">
+    
+    <div *ngIf="(pokemon | json) != '{}'">
+
+      <h3 class="card-header">{{ pokemon.name }} <small>({{ pokemon.id }})</small></h3>
+      <div class="card-block">
+          <span class="badge badge-default badge_type" *ngFor="let type of pokemon.types">
+            <a target="_blank"
+              href="{{type.type.url}}">{{ type.type.name }}
+            </a>
+          </span>
+      </div>
+
+      <img *ngIf="pokemon.sprites.front_default" [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+      
+      <div class="card-block">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a class="card-link">Ecouter son cri</a>
+          <a class="card-link">Où le trouver ?</a>
+      </div>
+
+      <div class="card-footer text-muted text-xs-center">
+          <span>✔ Dans le pokédex depuis le {{ pokemon.created_at | date:'d/M/y à H:m:s' }}</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

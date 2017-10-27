@@ -5,10 +5,9 @@ var Pokemon = require('../models/Pokemon.js');
 
 /* GET ALL POKEMONS */
 router.get('/', function(req, res, next) {
-    console.log('test');
-  Pokemon.find(function (err, products) {
+  Pokemon.find().sort('-created_at').exec(function (err, pokemons) {
     if (err) return next(err);
-    res.json(products);
+    res.json(pokemons);
   });
 });
 
@@ -16,8 +15,6 @@ router.get('/', function(req, res, next) {
 router.get('/id/:id', function(req, res, next) {
     Pokemon.findOne({ 'id': req.params.id }, function (err, pokemon) {
         if (err) return next(err);
-        console.log("POKEMON")
-        console.log(pokemon)
         res.json(pokemon);
     })
 });
@@ -26,23 +23,20 @@ router.get('/id/:id', function(req, res, next) {
 router.get('/name/:name', function(req, res, next) {
     Pokemon.findOne({ 'name': req.params.name }, function (err, pokemon) {
         if (err) return next(err);
-        console.log("POKEMON")
-        console.log(pokemon)
         res.json(pokemon);
     })
 });
 
 /* SAVE POKEMON */
 router.post('/', function(req, res, next) {
-    console.log(req.body);
     Pokemon.create(req.body, function (err, post) {
         if (err) return next(err);
-        console.log("POKEMON SAVED OK");
         res.json(post);
     });
 });
 
-/* UPDATE POKEMON */
+/*
+// UPDATE POKEMON 
 router.put('/:id', function(req, res, next) {
   Pokemon.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
@@ -50,12 +44,13 @@ router.put('/:id', function(req, res, next) {
   });
 });
 
-/* DELETE POKEMON */
+// DELETE POKEMON 
 router.delete('/:id', function(req, res, next) {
   Pokemon.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
+*/
 
 module.exports = router;

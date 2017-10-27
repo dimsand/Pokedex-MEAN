@@ -25,12 +25,15 @@ export class HomeComponent implements OnInit {
       this.result = {};
       this.loadingResult = true;
       console.log("ESSAI DB");
+      var result: { inDB?: Boolean };
       this.pokeapi.getPokemonFromDb(pokemon)
         .then(data => {
           console.log("RETOUR DB :");
           console.log(data);
           if(data != null){
-            this.result = data;
+            result = data;
+            result.inDB = true;
+            this.result = result;
             this.loadingResult = false;
           }else{
             console.log("ESSAI API");
@@ -39,7 +42,9 @@ export class HomeComponent implements OnInit {
               console.log("RETOUR API");
               console.log(data);
               if(data != null){
-                this.result = data;
+                result = data;
+                result.inDB = false;
+                this.result = result;
                 this.loadingResult = false;
                 // Enregistrement du pokémon en base
                 console.log("ENRESGISTREMENT DU POKEMON EN BASE")

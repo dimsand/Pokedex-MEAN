@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 export class PokeapiService {
 
   private API_URL = 'https://pokeapi.co/api/v2/pokemon/';
+  private BASE_BDD_URL = 'http://localhost:3000';
 
   constructor(private http: Http) { }
 
@@ -14,10 +15,24 @@ export class PokeapiService {
 
   getPokemonFromDb(pokemon) {
     return new Promise((resolve, reject) => {
-      var BDD_URL = '/pokemon/name/'+pokemon
+      var BDD_URL = this.BASE_BDD_URL+'/pokemon/name/'+pokemon
       if(Number(pokemon)){
-        BDD_URL = '/pokemon/id/'+pokemon;
+        BDD_URL = this.BASE_BDD_URL+'/pokemon/id/'+pokemon;
       }
+      console.log("BDD URL : " + BDD_URL);
+      this.http.get(BDD_URL)
+        .map(res => res.json())
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  getAllPokemonFromDb(){
+    return new Promise((resolve, reject) => {
+      var BDD_URL = this.BASE_BDD_URL+'/pokemon/'
       console.log("BDD URL : " + BDD_URL);
       this.http.get(BDD_URL)
         .map(res => res.json())
@@ -31,7 +46,7 @@ export class PokeapiService {
 
   storePokemonInDb(pokemon) {
     return new Promise((resolve, reject) => {
-      var BDD_URL = "/pokemon"
+      var BDD_URL = this.BASE_BDD_URL+"/pokemon"
       console.log("BDD URL : " + BDD_URL);
       this.http.post(BDD_URL, pokemon)
         .map(res => res.json())

@@ -5,7 +5,7 @@
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-addon">🔎</div>
-          <input type="text" class="form-control" id="query" placeholder="pikachu" #query value="pikachu" (keyup.enter)="searchPokemon(query.value)" autofocus>
+          <input type="text" class="form-control" id="query" placeholder="pikachu" #query (keyup.enter)="searchPokemon(query.value)" autofocus>
         </div>
       </div>
     </div>
@@ -49,7 +49,8 @@
     </div>
 
     <div class="card-footer text-muted text-xs-center">
-        ✘ Pas encore dans le pokédex
+        <span *ngIf="result.inDB">✔ Déjà dans le pokédex</span>
+        <span *ngIf="!result.inDB">✔ Bravo, vous avez ajouté ce pokémon dans le pokédex</span>
     </div>
   </div>
 </div>

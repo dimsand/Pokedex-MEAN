@@ -20,3 +20,30 @@
     height:40px;
     transition: .5s linear;
 }
+
+.not_in_pokedex{
+    width: 100%;
+    text-align: center;
+    padding: 9px;
+}
+
+.not_in_pokedex:before {
+    content: "\2718 Pas encore dans le pokédex";
+ }
+
+.not_in_pokedex:hover{
+    background-color: #375a7f;
+    padding: 7px;
+    border-radius: 5px;
+    border: solid black 2px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.not_in_pokedex:hover:before {
+    content: "+ Ajouter au pokédex";
+ }
+
+ .in_pokedex:before{
+    content: "+ Ajouter au pokédex";
+ }

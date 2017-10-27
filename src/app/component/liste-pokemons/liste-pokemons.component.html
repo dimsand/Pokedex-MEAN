@@ -1,3 +1,4 @@
+<button class="btn btn-warning" (click)="randomPokemons()" *ngIf="!loadingPokemons">⟳ Relancer la recherche</button>
 <div *ngIf="loadingPokemons">
   <p class="text-center">
       Chargement... {{percentLoadingPokemons}}%
@@ -38,7 +39,9 @@
       </div>
 
       <div class="card-footer text-muted text-xs-center">
-          ✔ Ajouté dans le pokédex
+          <span *ngIf="pokemon.inDB">✔ Déjà dans le pokédex</span>
+          <div class="not_in_pokedex" *ngIf="!pokemon.inDB" (click)="addToPokedex(pokemon.id)">
+          </div>
       </div>
 
     </div>
