@@ -1,8 +1,24 @@
 # pokedex-mean
-Pokédex fait avec les technos MEAN (Mongo, Express, Angular 2 and Node.js)
+Pokédex réalisé lors d'un TP avec les technos MEAN (Mongo, Express, Angular 2 and Node.js)
+
+
+<img src="./screenshot1.png" width="33%">
+<img src="./screenshot2.png" width="33%">
+<img src="./screenshot3.png" width="33%">
+
+## Getting Started
+1. Clone the repository
+2. Install the dependencies with `npm install`
+3. Launch Angular Server with `ng serve` (port 4200)
+4. Launch Express Node Js Server with `npm start` (port 3000)
 
 ## Liens utiles
 - https://www.djamware.com/post/58cf4e1c80aca72df8d1cf7e/tutorial-building-crud-app-from-scratch-using-mean-stack-angular-2
+- https://codecraft.tv/courses/angular/http/http-with-promises/
+- https://getbootstrap.com/docs/4.0/getting-started/introduction/
+- http://mongoosejs.com/docs/api.html#model_Model.findOne
+- http://mongoosejs.com/docs/models.html
+- https://www.youtube.com/watch?v=wtIvu085uU0
 
 # Pokemon
 
