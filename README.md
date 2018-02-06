@@ -1,4 +1,4 @@
-# pokedex-mean
+# pokedex-mean [![bitHound Overall Score](https://www.bithound.io/github/dimsand/Pokedex-MEAN/badges/score.svg)](https://www.bithound.io/github/dimsand/Pokedex-MEAN)  [![bitHound Dependencies](https://www.bithound.io/github/dimsand/Pokedex-MEAN/badges/dependencies.svg)](https://www.bithound.io/github/dimsand/Pokedex-MEAN/master/dependencies/npm) 
 Pokédex réalisé lors d'un TP avec les technos MEAN (Mongo, Express, Angular 2 and Node.js)
 
 
